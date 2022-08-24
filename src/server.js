@@ -11,7 +11,7 @@ const PORT = process.env.PORT;
 const mailRoute = require('./routes/contactformRoute')
 
 app.use((req, res, next) => {
-    const allowedOrigins = ["https://www.realrichi3.github.io"];
+    const allowedOrigins = ["https://www.realrichi3.github.io", "http://127.0.0.1:5500"];
     const origin = req.headers.origin;
     if (allowedOrigins.includes(origin)) {
         res.setHeader('Access-Control-Allow-Origin', origin);
