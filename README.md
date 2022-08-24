@@ -1,3 +1,3 @@
-# byinks-mail-server
-API for storing Newsletter signups and sending Customer request to email
 "# portfolio-contactform-api" 
+
+API for storing contact form detials and sending to admin email
