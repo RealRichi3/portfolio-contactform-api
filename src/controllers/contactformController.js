@@ -11,12 +11,16 @@ async function addNewContactForm(req, res) {
         // Send email to admin -> contains contact form data
         let mail_data = {
             email: process.env.ADMIN_EMAIL_ADDRESS,
-            title: `Contact form submission from ${new_contactform.email}`,
+            title: `Portfolio Contactform submition from ${new_contactform.email}`,
             message: `
-                Name: ${req.body.name}
-                Email: ${req.body.email}
-                Message: ${req.body.message}
+            
                 Form id: ${new_contactform._id}
+                -------------------------------
+                Name: ${req.body.name}
+                -------------------------------
+                Email: ${req.body.email}
+                ------------------------------
+                Message: ${req.body.message}
             `
         }
         await sendMail(mail_data);
@@ -48,7 +52,7 @@ async function getAllContactForms(req, res) {
         let response = await ContactForm.find();
         if (response) {
             res.status(200).send(response);
-        } else { 
+        } else {
             res.status(404).send("Not found");
         }
     } catch (error) {

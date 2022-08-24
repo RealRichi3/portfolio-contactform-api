@@ -3,7 +3,7 @@ const router = express.Router()
 
 const contactform = require('../controllers/contactformController')
 
-router.post('/new', contactform.addNewContactForm)
+router.post('/submit', contactform.addNewContactForm)
 router.get('/getall', contactform.getAllContactForms)
 router.get('/getone', contactform.getContactForm)
 // router.patch('/update', contactform.updateContactForm)

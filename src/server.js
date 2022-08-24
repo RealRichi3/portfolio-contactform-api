@@ -9,10 +9,9 @@ const connectDatabase = require("./db/connectDB");
 
 const PORT = process.env.PORT;
 const mailRoute = require('./routes/contactformRoute')
-const newsletterRoute = require('./routes/newsletterRoute')
 
 app.use((req, res, next) => {
-    const allowedOrigins = ["https://www.byinksmarketing.com"];
+    const allowedOrigins = ["https://www.realrichi3.github.io"];
     const origin = req.headers.origin;
     if (allowedOrigins.includes(origin)) {
         res.setHeader('Access-Control-Allow-Origin', origin);
@@ -28,7 +27,6 @@ app.use((req, res, next) => {
 app.use(morgan("tiny"));
 app.use(express.json());
 
-app.use('/api/newsletter', newsletterRoute)
 app.use('/api/contactform', mailRoute)
 
 const start = async () => {
